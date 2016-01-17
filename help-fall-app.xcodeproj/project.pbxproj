@@ -19,6 +19,7 @@
 		F18D40481C4B31C6002A415C /* EmergencyContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D40471C4B31C6002A415C /* EmergencyContactsVC.swift */; };
 		F18D404A1C4B3592002A415C /* AddContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D40491C4B3592002A415C /* AddContactsVC.swift */; };
 		F18D404C1C4B5728002A415C /* EmergencyContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D404B1C4B5728002A415C /* EmergencyContactCell.swift */; };
+		F18D40A81C4BAB49002A415C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18D40A71C4BAB49002A415C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F18D40471C4B31C6002A415C /* EmergencyContactsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmergencyContactsVC.swift; path = ../EmergencyContactsVC.swift; sourceTree = "<group>"; };
 		F18D40491C4B3592002A415C /* AddContactsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsVC.swift; sourceTree = "<group>"; };
 		F18D404B1C4B5728002A415C /* EmergencyContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyContactCell.swift; sourceTree = "<group>"; };
+		F18D40A71C4BAB49002A415C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18D40A81C4BAB49002A415C /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 		33B87E121C4AD77D007C79DF = {
 			isa = PBXGroup;
 			children = (
+				F18D40A71C4BAB49002A415C /* CoreLocation.framework */,
 				33B87E1D1C4AD77D007C79DF /* help-fall-app */,
 				33B87E1C1C4AD77D007C79DF /* Products */,
 			);

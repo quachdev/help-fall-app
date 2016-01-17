@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import CoreLocation
 
-class AlertTimerVC: UIViewController {
+class AlertTimerVC: UIViewController, CLLocationManagerDelegate {
     
     //MARK: Properties
+    
+    var user = UserSettings()
+    
+    let manager = CLLocationManager()
+    var latitude: String = ""
+    var longitude: String = ""
+    var locationLink: String = "http://maps.apple.com/?ll="
     
     @IBOutlet weak var circleProgressView: CircleProgressView!
 
@@ -30,6 +38,10 @@ class AlertTimerVC: UIViewController {
         super.viewDidLoad()
         circleProgressView.trackFillColor = UIColor.blackColor()
         resetTime()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,19 +51,30 @@ class AlertTimerVC: UIViewController {
     
     func alert() {
         let alert = UIAlertController(
-                title: "Emergency contacts will be contacted",
-                message: "They will be with you shortly",
+                title: "Emergency contacts have been contacted.",
+                message: "Help is on the way.",
                 preferredStyle: UIAlertControllerStyle.Alert)
-        
         // change the handler to dismiss the view controller rather than reset the time
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {
-            action in self.resetTime()
+            action in
+            self.dismissViewControllerAnimated(true, completion: nil)
         }))
 
         presentViewController(alert, animated: true, completion:nil)
 
     }
+        
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location:CLLocation = locations[0] {
+            latitude = String(location.coordinate.latitude)
+            longitude = String(location.coordinate.longitude)
+        }
+    }
     
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Failed to find user's location: \(error.localizedDescription)")
+    }
+
     func resetTime()  {
         seconds = 10.0
         timerLabel.text = "\(seconds)"

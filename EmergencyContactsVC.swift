@@ -20,16 +20,16 @@ class EmergencyContactsVC: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        
+        tableView.tableFooterView = UIView() // get rid of useless separator lines
         tableView.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     override func viewDidAppear(animated: Bool) {
         // Load saved data
         if let contactData = NSUserDefaults.standardUserDefaults().objectForKey("MyContacts") as? NSData {
@@ -73,7 +73,6 @@ class EmergencyContactsVC: UIViewController, UITableViewDataSource, UITableViewD
         
         return cell
     }
-    
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {

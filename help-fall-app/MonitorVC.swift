@@ -13,6 +13,7 @@ class MonitorVC: UIViewController {
 
     //MARK: Properties
     
+    var user = UserSettings()
     var manager = CMMotionManager()
     
     @IBOutlet var monitoringLabel: UILabel?
@@ -30,7 +31,7 @@ class MonitorVC: UIViewController {
         manager.accelerometerUpdateInterval = 0.1 // set motion manager properties
         manager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
             data, error in
-            if sqrt(pow((data?.acceleration.x)!,2) + pow((data?.acceleration.y)!,2) + pow((data?.acceleration.z)!,2)) > 3 {
+            if sqrt(pow((data?.acceleration.x)!,2) + pow((data?.acceleration.y)!,2) + pow((data?.acceleration.z)!,2)) > 5 {
                 self.monitoringLabel!.text = String(sqrt(pow((data?.acceleration.x)!,2) + pow((data?.acceleration.y)!,2) + pow((data?.acceleration.z)!,2)))
                 self.performSegueWithIdentifier("alertTimerSegue", sender: nil)
 
@@ -40,20 +41,30 @@ class MonitorVC: UIViewController {
     
     @IBAction func stopMonitoring() {
         monitoringLabel?.text = "Monitoring Off"
-        monitoringLabel?.textColor = UIColor.grayColor()
+        monitoringLabel?.textColor = UIColor.lightGrayColor()
         manager.stopAccelerometerUpdates()
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "alertTimerSegue" {
-//            let destViewController: AlertTimerVC = segue.destinationViewController as! AlertTimerVC
-//        }
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "alertTimerSegue" {
+            let destViewController: AlertTimerVC = segue.destinationViewController as! AlertTimerVC
+            destViewController.user = user
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        stopMonitoring()
+        // Load saved data
+        if let contactData = NSUserDefaults.standardUserDefaults().objectForKey("MyContacts") as? NSData {
+            self.user = NSKeyedUnarchiver.unarchiveObjectWithData(contactData) as! UserSettings
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
