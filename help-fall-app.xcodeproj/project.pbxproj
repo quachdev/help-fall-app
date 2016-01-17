@@ -14,6 +14,7 @@
 		33B87E291C4AD77D007C79DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33B87E271C4AD77D007C79DF /* LaunchScreen.storyboard */; };
 		33CF7CDC1C4AF83500940D2F /* AlertTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CF7CDB1C4AF83500940D2F /* AlertTimerVC.swift */; };
 		F18D40421C4B08FB002A415C /* MonitorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D40411C4B08FB002A415C /* MonitorVC.swift */; };
+		F18D40441C4B2099002A415C /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D40431C4B2099002A415C /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		33B87E2A1C4AD77D007C79DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33CF7CDB1C4AF83500940D2F /* AlertTimerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTimerVC.swift; sourceTree = "<group>"; };
 		F18D40411C4B08FB002A415C /* MonitorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorVC.swift; sourceTree = "<group>"; };
+		F18D40431C4B2099002A415C /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				33B87E201C4AD77D007C79DF /* ViewController.swift */,
 				33CF7CDB1C4AF83500940D2F /* AlertTimerVC.swift */,
 				F18D40411C4B08FB002A415C /* MonitorVC.swift */,
+				F18D40431C4B2099002A415C /* UserSettings.swift */,
 				33B87E221C4AD77D007C79DF /* Main.storyboard */,
 				33B87E251C4AD77D007C79DF /* Assets.xcassets */,
 				33B87E271C4AD77D007C79DF /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				33B87E211C4AD77D007C79DF /* ViewController.swift in Sources */,
 				33CF7CDC1C4AF83500940D2F /* AlertTimerVC.swift in Sources */,
 				33B87E1F1C4AD77D007C79DF /* AppDelegate.swift in Sources */,
+				F18D40441C4B2099002A415C /* UserSettings.swift in Sources */,
 				F18D40421C4B08FB002A415C /* MonitorVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
