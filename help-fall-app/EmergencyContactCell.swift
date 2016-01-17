@@ -9,16 +9,23 @@
 import UIKit
 
 class EmergencyContactCell: UITableViewCell {
-
+    
+    @IBOutlet var nameLabel: UILabel?
+    @IBOutlet var numberLabel: UILabel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
+    func setCell(name: String, number: String) {
+        nameLabel!.text = name
+        numberLabel!.text = number
+    }
 }

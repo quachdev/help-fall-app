@@ -8,32 +8,89 @@
 
 import UIKit
 
-class EmergencyContactsVC: UIViewController {
+class EmergencyContactsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    //MARK: Properties
     
     var user = UserSettings()
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Load saved data
-        if let contactData = NSUserDefaults.standardUserDefaults().objectForKey("MyContacts") as? NSData {
-            self.user = NSKeyedUnarchiver.unarchiveObjectWithData(contactData) as! UserSettings
-        }
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(animated: Bool) {
+        // Load saved data
+        if let contactData = NSUserDefaults.standardUserDefaults().objectForKey("MyContacts") as? NSData {
+            self.user = NSKeyedUnarchiver.unarchiveObjectWithData(contactData) as! UserSettings
+        }
+        tableView.reloadData()
+        print(user.emergencyContactNames)
     }
-    */
-
+    
+    //    override func viewWillAppear(animated: Bool) {
+    //        // Load saved data
+    //        if let contactData = NSUserDefaults.standardUserDefaults().objectForKey("MyContacts") as? NSData {
+    //            self.user = NSKeyedUnarchiver.unarchiveObjectWithData(contactData) as! UserSettings
+    //        }
+    //        tableView.reloadData()
+    //    }
+    
+    func saveContacts() {
+        let contacts = NSKeyedArchiver.archivedDataWithRootObject(self.user)
+        NSUserDefaults.standardUserDefaults().setObject(contacts, forKey: "MyContacts")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    @IBAction func close() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    //MARK: Table View
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.user.emergencyContactNames.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: EmergencyContactCell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! EmergencyContactCell
+        
+        let name = self.user.emergencyContactNames[indexPath.row]
+        let number = self.user.emergencyContactNumbers[indexPath.row]
+        
+        cell.setCell(name, number: number)
+        
+        return cell
+    }
+    
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            self.user.emergencyContactNames.removeAtIndex(indexPath.row)
+            self.user.emergencyContactNumbers.removeAtIndex(indexPath.row)
+            self.saveContacts()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddContacts" {
+            let destViewController: AddContactsVC = segue.destinationViewController as! AddContactsVC
+            destViewController.user = user
+        }
+    }
+    
 }

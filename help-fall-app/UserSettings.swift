@@ -12,33 +12,29 @@ class UserSettings: NSObject, NSCoding {
     
     //MARK: Properties
     
-    private var _emergencyContactNames: [String]
-    private var _emergencyContactNumbers: [String]
+//    private var _emergencyContactNames: [String]
+//    private var _emergencyContactNumbers: [String]
     
-    var emergencyContactNames: [String] {
-        return _emergencyContactNames
-    }
-    var emergencyContactNumbers: [String] {
-        return _emergencyContactNumbers
-    }
+    var emergencyContactNames: [String]
+    var emergencyContactNumbers: [String]
     
     //MARK: Methods
     
     override init() {
-        self._emergencyContactNames = []
-        self._emergencyContactNumbers = []
+        self.emergencyContactNames = []
+        self.emergencyContactNumbers = []
     }
     
     func addContact(name: String, number: String) {
-        self._emergencyContactNames.append(name)
-        self._emergencyContactNumbers.append(number)
+        self.emergencyContactNames.append(name)
+        self.emergencyContactNumbers.append(number)
     }
     
     //MARK: NSCoding
     
     required init?(coder aDecoder: NSCoder) {
-        self._emergencyContactNames = aDecoder.decodeObjectForKey("emergencyContactName") as! [String]
-        self._emergencyContactNumbers = aDecoder.decodeObjectForKey("emergencyContactNumber") as! [String]
+        self.emergencyContactNames = aDecoder.decodeObjectForKey("emergencyContactName") as! [String]
+        self.emergencyContactNumbers = aDecoder.decodeObjectForKey("emergencyContactNumber") as! [String]
     }
     
     func encodeWithCoder(aCoder: NSCoder) {

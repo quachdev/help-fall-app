@@ -18,19 +18,20 @@ class AddContactsVC: UIViewController {
     
     //MARK: Methods
     
-    func refreshGradeWeightTextFields() {
+    func refreshNameNumberTextFields() {
         nameTextField!.text = ""
         numberTextField!.text = ""
     }
     
+    
     @IBAction func add() {
-        user.addContact(String(nameTextField), number: String(numberTextField))
+        user.addContact(nameTextField.text!, number: numberTextField.text!)
         // Save to NSUserDefaults
         let contactData = NSKeyedArchiver.archivedDataWithRootObject(user)
         NSUserDefaults.standardUserDefaults().setObject(contactData, forKey: "MyContacts")
         NSUserDefaults.standardUserDefaults().synchronize()
-        refreshGradeWeightTextFields()
-        self.resignFirstResponder()
+        refreshNameNumberTextFields()
+        viewTapped()
     }
     
     @IBAction func done() {
@@ -44,9 +45,8 @@ class AddContactsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.nameTextField?.autocapitalizationType = .Words
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,12 +54,12 @@ class AddContactsVC: UIViewController {
     
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
