@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
@@ -16,7 +15,49 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ias-Hi-OzA">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dri-io-nmf">
+                                <rect key="frame" x="243" y="242" width="115" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="9I4-Wp-zt7"/>
+                                    <constraint firstAttribute="width" constant="115" id="FiA-mE-P8p"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ias-Hi-OzA" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="5Z2-Jq-2u5"/>
+                            <constraint firstItem="Ias-Hi-OzA" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6L0-4m-mhf"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Ias-Hi-OzA" secondAttribute="bottom" id="CQR-6k-u3C"/>
+                            <constraint firstItem="dri-io-nmf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="CdA-1C-4ac"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="dri-io-nmf" secondAttribute="bottom" constant="243" id="Gi3-X1-9jc"/>
+                            <constraint firstAttribute="trailing" secondItem="Ias-Hi-OzA" secondAttribute="trailing" id="HMQ-2M-ghK"/>
+                            <constraint firstItem="Ias-Hi-OzA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Rqi-2V-tg8"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Ias-Hi-OzA" secondAttribute="bottom" id="Sh4-eR-mfO"/>
+                            <constraint firstItem="Ias-Hi-OzA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="fuf-f5-MIR"/>
+                            <constraint firstItem="dri-io-nmf" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ixy-gI-0d7"/>
+                            <constraint firstItem="Ias-Hi-OzA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kXu-es-G0E"/>
+                            <constraint firstItem="dri-io-nmf" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="222" id="oaH-Fp-Lr0"/>
+                            <constraint firstAttribute="trailing" secondItem="dri-io-nmf" secondAttribute="trailing" constant="242" id="qIj-qk-l3C"/>
+                            <constraint firstItem="dri-io-nmf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="243" id="slx-jw-aWJ"/>
+                            <constraint firstItem="Ias-Hi-OzA" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="xXQ-iw-8g8"/>
+                            <constraint firstAttribute="trailing" secondItem="Ias-Hi-OzA" secondAttribute="trailing" id="ym2-Xw-v6f"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5Z2-Jq-2u5"/>
+                                <exclude reference="fuf-f5-MIR"/>
+                                <exclude reference="ym2-Xw-v6f"/>
+                                <exclude reference="oaH-Fp-Lr0"/>
+                                <exclude reference="qIj-qk-l3C"/>
+                                <exclude reference="slx-jw-aWJ"/>
+                                <exclude reference="CQR-6k-u3C"/>
+                                <exclude reference="Gi3-X1-9jc"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +65,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchBackground" width="300" height="300"/>
+        <image name="LaunchLogo" width="115" height="113"/>
+    </resources>
 </document>
