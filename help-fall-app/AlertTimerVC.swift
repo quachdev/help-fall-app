@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Parse
 
 class AlertTimerVC: UIViewController, CLLocationManagerDelegate {
     
@@ -96,6 +97,14 @@ class AlertTimerVC: UIViewController, CLLocationManagerDelegate {
         if seconds == 0.0 {
             timer.invalidate()
             alert()
+            
+            PFCloud.callFunctionInBackground("sendMessagePlease", withParameters: [:]) {
+                (ratings, error) in
+                if (error == nil) {
+                    print("Dead")
+                }
+            }
+
         }
     }
 
