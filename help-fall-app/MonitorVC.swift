@@ -20,6 +20,10 @@ class MonitorVC: UIViewController {
     
     //MARK: Methods
     
+    @IBAction func toAlertButtonPressed() {
+        self.performSegueWithIdentifier("alertTimerSegue", sender: nil)
+    }
+    
     @IBAction func startMonitoring() {
         monitoringLabel?.hidden = false
         manager.accelerometerUpdateInterval = 0.1 // set motion manager properties
