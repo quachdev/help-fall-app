@@ -25,7 +25,8 @@ class MonitorVC: UIViewController {
     }
     
     @IBAction func startMonitoring() {
-        monitoringLabel?.hidden = false
+        monitoringLabel?.text = "Monitoring On"
+        monitoringLabel?.textColor = UIColor.blackColor()
         manager.accelerometerUpdateInterval = 0.1 // set motion manager properties
         manager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
             data, error in
@@ -38,7 +39,8 @@ class MonitorVC: UIViewController {
     }
     
     @IBAction func stopMonitoring() {
-        monitoringLabel?.hidden = true
+        monitoringLabel?.text = "Monitoring Off"
+        monitoringLabel?.textColor = UIColor.grayColor()
         manager.stopAccelerometerUpdates()
     }
     

@@ -14,7 +14,7 @@ class AlertTimerVC: UIViewController {
     
     @IBOutlet weak var circleProgressView: CircleProgressView!
 
-    var seconds = 0
+    var seconds = 0.0
     var timer = NSTimer()
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -47,15 +47,17 @@ class AlertTimerVC: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {
             action in self.resetTime()
         }))
-        
+
         presentViewController(alert, animated: true, completion:nil)
 
     }
     
     func resetTime()  {
-        seconds = 10
+        seconds = 10.0
         timerLabel.text = "\(seconds)"
         circleProgressView.progress = Double(seconds)
+        circleProgressView.progress = circleProgressView.progress
+
 //        circleProgressView.setProgress(Double(seconds), animated: true)
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "subtractTime", userInfo: nil, repeats: true)
@@ -64,10 +66,11 @@ class AlertTimerVC: UIViewController {
     func subtractTime() {
         seconds--
         timerLabel.text = "\(seconds)"
-//        circleProgressView.progress = Double(seconds)
-        circleProgressView.setProgress(Double(seconds), animated: true)
+        circleProgressView.progress = Double(seconds/10.0)
+        print(circleProgressView.progress)
+//        circleProgressView.setProgress(Double(seconds), animated: true)
 
-        if seconds == 0 {
+        if seconds == 0.0 {
             timer.invalidate()
             alert()
         }
