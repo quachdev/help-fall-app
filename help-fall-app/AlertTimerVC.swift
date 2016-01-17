@@ -19,12 +19,14 @@ class AlertTimerVC: UIViewController {
     
     //MARK: Methods
 
-    @IBAction func alertButtonClicked(sender: AnyObject) {
-        resetTime()
+    @IBAction func isOkButtonClicked(sender: AnyObject) {
+        timer.invalidate()
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resetTime()
     }
 
     override func didReceiveMemoryWarning() {
