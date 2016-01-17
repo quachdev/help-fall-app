@@ -11,6 +11,8 @@ import UIKit
 class AlertTimerVC: UIViewController {
     
     //MARK: Properties
+    
+    @IBOutlet weak var circleProgressView: CircleProgressView!
 
     var seconds = 0
     var timer = NSTimer()
@@ -26,6 +28,7 @@ class AlertTimerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        circleProgressView.trackFillColor = UIColor.blackColor()
         resetTime()
     }
 
@@ -37,7 +40,7 @@ class AlertTimerVC: UIViewController {
     func alert() {
         let alert = UIAlertController(
                 title: "Emergency contacts will be contacted",
-                message: "Lalalalala",
+                message: "They will be with you shortly",
                 preferredStyle: UIAlertControllerStyle.Alert)
         
         // change the handler to dismiss the view controller rather than reset the time
@@ -50,17 +53,20 @@ class AlertTimerVC: UIViewController {
     }
     
     func resetTime()  {
-        seconds = 3
-        timerLabel.text = "Time: \(seconds)"
+        seconds = 10
+        timerLabel.text = "\(seconds)"
+        circleProgressView.progress = Double(seconds)
+//        circleProgressView.setProgress(Double(seconds), animated: true)
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "subtractTime", userInfo: nil, repeats: true)
-        
     }
     
     func subtractTime() {
         seconds--
-        timerLabel.text = "Time: \(seconds)"
-        
+        timerLabel.text = "\(seconds)"
+//        circleProgressView.progress = Double(seconds)
+        circleProgressView.setProgress(Double(seconds), animated: true)
+
         if seconds == 0 {
             timer.invalidate()
             alert()

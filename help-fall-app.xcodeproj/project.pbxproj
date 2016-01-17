@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3345A7281C4B5E1D00C3EA92 /* CircleProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3345A7271C4B5E1D00C3EA92 /* CircleProgressBarView.swift */; };
 		33B87E1F1C4AD77D007C79DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B87E1E1C4AD77D007C79DF /* AppDelegate.swift */; };
 		33B87E211C4AD77D007C79DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B87E201C4AD77D007C79DF /* ViewController.swift */; };
 		33B87E241C4AD77D007C79DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33B87E221C4AD77D007C79DF /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3345A7271C4B5E1D00C3EA92 /* CircleProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressBarView.swift; sourceTree = "<group>"; };
 		33B87E1B1C4AD77D007C79DF /* help-fall-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "help-fall-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B87E1E1C4AD77D007C79DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33B87E201C4AD77D007C79DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3345A7291C4B5E3D00C3EA92 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				33B87E201C4AD77D007C79DF /* ViewController.swift */,
+				F18D40471C4B31C6002A415C /* EmergencyContactsVC.swift */,
+				33CF7CDB1C4AF83500940D2F /* AlertTimerVC.swift */,
+				F18D40411C4B08FB002A415C /* MonitorVC.swift */,
+				F18D40491C4B3592002A415C /* AddContactsVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3345A72A1C4B5E4D00C3EA92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F18D404B1C4B5728002A415C /* EmergencyContactCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3345A72B1C4B5E6100C3EA92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F18D40431C4B2099002A415C /* UserSettings.swift */,
+				3345A7271C4B5E1D00C3EA92 /* CircleProgressBarView.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		33B87E121C4AD77D007C79DF = {
 			isa = PBXGroup;
 			children = (
@@ -67,13 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				33B87E1E1C4AD77D007C79DF /* AppDelegate.swift */,
-				F18D40431C4B2099002A415C /* UserSettings.swift */,
-				33B87E201C4AD77D007C79DF /* ViewController.swift */,
-				F18D40471C4B31C6002A415C /* EmergencyContactsVC.swift */,
-				F18D404B1C4B5728002A415C /* EmergencyContactCell.swift */,
-				33CF7CDB1C4AF83500940D2F /* AlertTimerVC.swift */,
-				F18D40411C4B08FB002A415C /* MonitorVC.swift */,
-				F18D40491C4B3592002A415C /* AddContactsVC.swift */,
+				3345A7291C4B5E3D00C3EA92 /* Controllers */,
+				3345A72A1C4B5E4D00C3EA92 /* Views */,
+				3345A72B1C4B5E6100C3EA92 /* Resources */,
 				33B87E221C4AD77D007C79DF /* Main.storyboard */,
 				33B87E251C4AD77D007C79DF /* Assets.xcassets */,
 				33B87E271C4AD77D007C79DF /* LaunchScreen.storyboard */,
@@ -161,6 +188,7 @@
 				F18D404A1C4B3592002A415C /* AddContactsVC.swift in Sources */,
 				F18D40421C4B08FB002A415C /* MonitorVC.swift in Sources */,
 				F18D40481C4B31C6002A415C /* EmergencyContactsVC.swift in Sources */,
+				3345A7281C4B5E1D00C3EA92 /* CircleProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
