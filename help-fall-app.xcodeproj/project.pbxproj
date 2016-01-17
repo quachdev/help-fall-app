@@ -15,6 +15,9 @@
 		33CF7CDC1C4AF83500940D2F /* AlertTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CF7CDB1C4AF83500940D2F /* AlertTimerVC.swift */; };
 		F18D40421C4B08FB002A415C /* MonitorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D40411C4B08FB002A415C /* MonitorVC.swift */; };
 		F18D40441C4B2099002A415C /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D40431C4B2099002A415C /* UserSettings.swift */; };
+		F18D40481C4B31C6002A415C /* EmergencyContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D40471C4B31C6002A415C /* EmergencyContactsVC.swift */; };
+		F18D404A1C4B3592002A415C /* AddContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D40491C4B3592002A415C /* AddContactsVC.swift */; };
+		F18D404C1C4B5728002A415C /* EmergencyContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D404B1C4B5728002A415C /* EmergencyContactCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		33CF7CDB1C4AF83500940D2F /* AlertTimerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTimerVC.swift; sourceTree = "<group>"; };
 		F18D40411C4B08FB002A415C /* MonitorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorVC.swift; sourceTree = "<group>"; };
 		F18D40431C4B2099002A415C /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		F18D40471C4B31C6002A415C /* EmergencyContactsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmergencyContactsVC.swift; path = ../EmergencyContactsVC.swift; sourceTree = "<group>"; };
+		F18D40491C4B3592002A415C /* AddContactsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsVC.swift; sourceTree = "<group>"; };
+		F18D404B1C4B5728002A415C /* EmergencyContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyContactCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +67,13 @@
 			isa = PBXGroup;
 			children = (
 				33B87E1E1C4AD77D007C79DF /* AppDelegate.swift */,
+				F18D40431C4B2099002A415C /* UserSettings.swift */,
 				33B87E201C4AD77D007C79DF /* ViewController.swift */,
+				F18D40471C4B31C6002A415C /* EmergencyContactsVC.swift */,
+				F18D404B1C4B5728002A415C /* EmergencyContactCell.swift */,
 				33CF7CDB1C4AF83500940D2F /* AlertTimerVC.swift */,
 				F18D40411C4B08FB002A415C /* MonitorVC.swift */,
-				F18D40431C4B2099002A415C /* UserSettings.swift */,
+				F18D40491C4B3592002A415C /* AddContactsVC.swift */,
 				33B87E221C4AD77D007C79DF /* Main.storyboard */,
 				33B87E251C4AD77D007C79DF /* Assets.xcassets */,
 				33B87E271C4AD77D007C79DF /* LaunchScreen.storyboard */,
@@ -144,11 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18D404C1C4B5728002A415C /* EmergencyContactCell.swift in Sources */,
 				33B87E211C4AD77D007C79DF /* ViewController.swift in Sources */,
 				33CF7CDC1C4AF83500940D2F /* AlertTimerVC.swift in Sources */,
 				33B87E1F1C4AD77D007C79DF /* AppDelegate.swift in Sources */,
 				F18D40441C4B2099002A415C /* UserSettings.swift in Sources */,
+				F18D404A1C4B3592002A415C /* AddContactsVC.swift in Sources */,
 				F18D40421C4B08FB002A415C /* MonitorVC.swift in Sources */,
+				F18D40481C4B31C6002A415C /* EmergencyContactsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
