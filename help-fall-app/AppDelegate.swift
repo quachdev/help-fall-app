@@ -28,8 +28,8 @@ import Bolts
             
             // ****************************************************************************
             // Uncomment and fill in with your Parse credentials:
-            Parse.setApplicationId("Q6XUUDqnHtZUHtBBzessAglqu4aRuYRC3Kx5vICF",
-                clientKey: "1SOVFIkgMwNM1gnh5OAM3sQSRd6VGQ5NCiLhHt2m")        //
+            Parse.setApplicationId("",
+                clientKey: "")        //
             // If you are using Facebook, uncomment and add your FacebookAppID to your bundle's plist as
             // described here: https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/
             // Uncomment the line inside ParseStartProject-Bridging-Header and the following line here:
